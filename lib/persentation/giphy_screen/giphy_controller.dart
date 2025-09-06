@@ -9,7 +9,7 @@ class GiphyController extends GetxController {
   final apiKey = "PXkOQSY14UIOGC2C66LsVKB1mpO5ESyR";
   RxBool isLoading = true.obs;
   RxList gifList = <GifData>[].obs;
-   
+
   var selectedGifList = <String>[].obs;
 
   @override

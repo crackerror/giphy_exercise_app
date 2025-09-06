@@ -26,8 +26,8 @@ class GiphyScreen extends GetView<GiphyController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 30),
-              GestureDetector(
+              const SizedBox(height: 20),
+              InkWell(
                 onTap: () async {
                   GiphyGif? gif = await GiphyGet.getGif(
                     context: context,
@@ -38,32 +38,13 @@ class GiphyScreen extends GetView<GiphyController> {
                     controller.addSelectedGif(gif.images?.original?.url ?? '');
                   }
                 },
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.pink.withAlpha(77),
-                    borderRadius: BorderRadius.circular(77),
+                child: const Text(
+                  "My Selected GIFs",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
                   ),
-                  height: 50,
-                  width: Get.width,
-                  child: const Center(
-                    child: Text(
-                      "Select Your Fav Gif",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                "My Selected GIFs",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16,
                 ),
               ),
               Obx(() {
